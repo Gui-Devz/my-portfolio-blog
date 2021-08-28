@@ -35,7 +35,7 @@ export function Technologies() {
           </div>
           <div>
             <FaCss3 color="#3B8BB1" fontSize="4em" />
-            <span>CSS3</span>
+            <span>CSS3/SASS</span>
           </div>
         </div>
       </section>
