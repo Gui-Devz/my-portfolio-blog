@@ -9,34 +9,20 @@ import { ContactMe } from "../components/ContactMe";
 import { Footer } from "../components/Footer";
 
 import styles from "./home.module.scss";
+import { useEffect, useState } from "react";
+import { ScrollUp } from "../components/ScrollUp";
 
 const Home: NextPage = () => {
-  let lastKnownScrollPosition = 0;
-  let ticking = false;
+  const [lastKnownScrollPosition, setLastKnownScrollPosition] = useState(0);
 
-  function doSomething(scrollPos) {
-    // Do something with the scroll position
-    console.log(scrollPos);
-    if (scrollPos === 200) {
-      window.scrollTo(0, 0);
-    }
-  }
-
-  document.addEventListener("scroll", function (e) {
-    lastKnownScrollPosition = window.scrollY;
-
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        doSomething(lastKnownScrollPosition);
-        ticking = false;
-      });
-
-      ticking = true;
-    }
+  useEffect(() => {
+    document.addEventListener("scroll", function (e) {
+      setLastKnownScrollPosition(window.scrollY);
+    });
   });
   return (
     <>
-      <div id="initial" className={styles.main}>
+      <div className={styles.main}>
         <Head>
           <title>Portfolio - Guilherme</title>
         </Head>
@@ -46,6 +32,7 @@ const Home: NextPage = () => {
         <MyProjects />
         <ContactMe />
         <Footer />
+        {lastKnownScrollPosition >= 200 && <ScrollUp />}
       </div>
     </>
   );
