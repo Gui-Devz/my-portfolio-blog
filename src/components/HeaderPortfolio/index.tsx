@@ -10,11 +10,8 @@ export function HeaderPortfolio() {
   return (
     <header className={styles.navHeader}>
       <div className={styles.headerContainer}>
-        <Link href="#initial">
-          <a>
-            <Image src={logoImg} alt="Logo image" />
-          </a>
-        </Link>
+        <Image src={logoImg} alt="Logo image" />
+
         <nav>
           <Link href="/">
             <a>Blog</a>
