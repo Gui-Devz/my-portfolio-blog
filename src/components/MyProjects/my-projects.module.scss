@@ -1,0 +1,22 @@
+.H2 {
+  font-family: "Press Start 2P", cursive;
+  line-height: 1em;
+  font-size: 1em;
+
+  margin-bottom: 4rem;
+
+  text-align: center;
+}
+
+.projects {
+  background: var(--gray-900);
+  padding: 1rem;
+  margin-bottom: 4rem;
+
+  .projectsWrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3.5rem;
+  }
+}

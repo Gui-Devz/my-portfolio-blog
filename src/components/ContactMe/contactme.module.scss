@@ -1,0 +1,67 @@
+.H2 {
+  font-family: "Press Start 2P", cursive;
+  line-height: 1em;
+  font-size: 1em;
+
+  margin-bottom: 4rem;
+
+  text-align: center;
+}
+
+.contactMe {
+  form {
+    width: 80vw;
+    max-width: 500px;
+    margin: 0 auto;
+
+    background: #373737;
+    border-radius: 0.2rem;
+
+    padding: 1rem;
+
+    input {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem;
+
+      font-size: 0.7em;
+
+      border: none;
+
+      width: 100%;
+
+      border-radius: 0.2rem;
+    }
+
+    .textArea {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      margin-bottom: 1.5rem;
+      textarea {
+        border: 1px solid #888;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+
+        font-size: 0.7em;
+      }
+    }
+
+    button {
+      background: var(--cyan-500);
+      border: none;
+      border-radius: 0.2rem;
+
+      padding: 0.5rem;
+
+      color: white;
+      span {
+        padding-left: 0.5rem;
+        font-size: 0.8em;
+
+        height: 100%;
+      }
+    }
+  }
+}

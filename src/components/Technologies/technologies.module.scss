@@ -1,0 +1,44 @@
+.H2 {
+  font-family: "Press Start 2P", cursive;
+  line-height: 1em;
+  font-size: 1em;
+
+  margin-bottom: 4rem;
+
+  text-align: center;
+}
+
+.technologies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+
+  width: 100%;
+  height: 15rem;
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+
+  background: var(--gray-900);
+
+  .techTools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+    background: var(--gray-900);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
