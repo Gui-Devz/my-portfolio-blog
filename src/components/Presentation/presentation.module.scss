@@ -57,6 +57,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .presentation {
+    margin-top: 0;
+  }
+
   .heroImg {
     display: none;
     max-width: 0;
