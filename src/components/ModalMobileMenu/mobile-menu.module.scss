@@ -1,0 +1,38 @@
+.menuContainer {
+  position: relative;
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    font-size: 2em;
+    line-height: 2em;
+    text-align: center;
+
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+  }
+  .linksWrapper {
+    position: relative;
+
+    .socialWrapper {
+      display: flex;
+      gap: 2rem;
+
+      justify-content: center;
+    }
+  }
+  .btnClose {
+    position: absolute;
+    top: -3rem;
+    right: 1rem;
+
+    button {
+      background: none;
+      color: white;
+      font-size: 2rem;
+
+      border: none;
+    }
+  }
+}
