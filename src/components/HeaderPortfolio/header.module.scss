@@ -1,3 +1,24 @@
+.Modal {
+  position: absolute;
+  top: 0;
+  left: 4rem;
+  right: 0;
+  bottom: 20rem;
+  background-color: var(--gray-900);
+
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .navHeader {
   background: var(--yellow-500);
   position: fixed;
@@ -7,7 +28,7 @@
   height: 5rem;
   padding: 1rem;
 
-  z-index: 100;
+  z-index: 2;
 
   .headerContainer {
     display: flex;
@@ -36,5 +57,18 @@
 
   img {
     width: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navHeader {
+    position: relative;
+    z-index: 0;
+    nav {
+      display: none !important;
+    }
+    .mobileMenu {
+      display: block;
+    }
   }
 }
