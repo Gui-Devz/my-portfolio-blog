@@ -1,9 +1,6 @@
-import { SiJavascript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { FaNode } from "react-icons/fa";
-import { SiPostgresql } from "react-icons/si";
+import { SiJavascript, SiPostgresql, SiJest } from "react-icons/si";
+import { FaReact, FaNode, FaCss3 } from "react-icons/fa";
 import { SiHtml5 } from "react-icons/si";
-import { FaCss3 } from "react-icons/fa";
 
 import styles from "./technologies.module.scss";
 
@@ -26,12 +23,12 @@ export function Technologies() {
             <span>Node.js</span>
           </div>
           <div>
-            <SiPostgresql color="#375185" fontSize="4em" />
-            <span>PostgreSQL</span>
+            <SiJest color="#A54513" fontSize="4em" />
+            <span>Jest</span>
           </div>
           <div>
-            <SiHtml5 color="#A54513" fontSize="4em" />
-            <span>HTML5</span>
+            <SiPostgresql color="#375185" fontSize="4em" />
+            <span>PostgreSQL</span>
           </div>
           <div>
             <FaCss3 color="#3B8BB1" fontSize="4em" />
