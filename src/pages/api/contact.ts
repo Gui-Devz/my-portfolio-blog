@@ -3,12 +3,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import transporter from "../../services/nodemailer";
 
-type Data = {
-  name: string;
-  email: string;
-  message: string;
-};
-
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const pattern =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
