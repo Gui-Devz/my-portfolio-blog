@@ -10,7 +10,8 @@ export function MyResume() {
         Resume
       </h2>
       <section className={styles.resume}>
-        <p>Take a look at my resume:</p>
+        <p className={styles.resumeIntro}>Take a look at my resume:</p>
+
         <div className={styles.content}>
           <div className={styles.btn}>
             <Link href="https://drive.google.com/file/d/13giT55d8fXyztXdGEJ8cUeG_z09drIFx/view">
