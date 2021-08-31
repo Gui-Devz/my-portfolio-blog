@@ -5,12 +5,14 @@
     flex-direction: column;
     gap: 2rem;
 
+    height: auto;
+
     font-size: 2em;
     line-height: 2em;
     text-align: center;
 
     margin-top: 4rem;
-    margin-bottom: 6rem;
+    padding-bottom: 6rem;
   }
   .linksWrapper {
     position: relative;
