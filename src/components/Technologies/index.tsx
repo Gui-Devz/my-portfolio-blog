@@ -1,6 +1,5 @@
 import { SiJavascript, SiPostgresql, SiJest } from "react-icons/si";
 import { FaReact, FaNode, FaCss3 } from "react-icons/fa";
-import { SiHtml5 } from "react-icons/si";
 
 import styles from "./technologies.module.scss";
 
