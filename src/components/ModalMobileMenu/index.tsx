@@ -24,6 +24,9 @@ export function ModalMobileMenu({ toggleModal }: ModalDataProps) {
           <Link href="#projects">
             <a onClick={() => toggleModal()}>Projects</a>
           </Link>
+          <Link href="#resume">
+            <a onClick={() => toggleModal()}>Resume</a>
+          </Link>
           <Link href="#contactme">
             <a onClick={() => toggleModal()}>Contact me</a>
           </Link>
