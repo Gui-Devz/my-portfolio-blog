@@ -5,6 +5,7 @@ import { Technologies } from "../components/Technologies";
 import Presentation from "../components/Presentation";
 import { HeaderPortfolio } from "../components/HeaderPortfolio";
 import { MyProjects } from "../components/MyProjects";
+import { MyResume } from "../components/MyResume";
 import { ContactMe } from "../components/ContactMe";
 import { Footer } from "../components/Footer";
 
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
         <Presentation />
         <Technologies />
         <MyProjects />
+        <MyResume />
         <ContactMe />
         <Footer />
         {lastKnownScrollPosition >= 200 && <ScrollUp />}
