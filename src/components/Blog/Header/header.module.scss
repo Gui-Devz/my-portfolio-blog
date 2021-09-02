@@ -1,0 +1,82 @@
+header {
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 920px;
+
+    padding: 2rem;
+    margin: 0 auto;
+
+    img {
+      width: 3rem;
+    }
+
+    .filtersAndLinks {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      form .searchInput {
+        position: relative;
+
+        input {
+          width: 25rem;
+          height: 2rem;
+
+          padding: 1rem;
+          padding-right: 3rem;
+
+          border: none;
+          border-radius: 0.2rem;
+        }
+
+        .searchIcon {
+          position: absolute;
+          right: 1rem;
+          top: 0.5rem;
+
+          background: none;
+          color: black;
+          border: none;
+
+          cursor: pointer;
+        }
+      }
+
+      a:hover {
+        filter: brightness(0.9);
+      }
+    }
+
+    .socialWrapper {
+      display: flex;
+      gap: 0.9rem;
+
+      & svg:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  .selectTags {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-weight: 600;
+
+    select {
+      border: none;
+      border-radius: 0.2rem;
+    }
+  }
+
+  .line {
+    margin-top: 2rem;
+    border: 0.1px solid var(--gray-300);
+  }
+}
