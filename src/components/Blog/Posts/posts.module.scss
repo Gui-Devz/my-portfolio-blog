@@ -1,0 +1,17 @@
+.postsContainer {
+  max-width: 920px;
+  min-height: 100vh;
+  padding: 0 6rem;
+  margin: 0 auto;
+
+  .card {
+    margin: 4rem 0;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      border-bottom: 0.1rem solid var(--gray-300);
+      margin-top: 4rem;
+    }
+  }
+}
