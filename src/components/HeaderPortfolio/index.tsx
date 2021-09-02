@@ -38,8 +38,8 @@ export function HeaderPortfolio() {
         <div className={styles.headerContainer}>
           <Image src={logoImg} alt="Logo image" />
           <nav>
-            <Link href="/">
-              <a>Blog</a>
+            <Link href="/blog">
+              <a target="_blank">Blog</a>
             </Link>
             <Link href="#projects">
               <a>Projects</a>
