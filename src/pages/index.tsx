@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     document.addEventListener("scroll", function (e) {
       setLastKnownScrollPosition(window.scrollY);
     });
-  });
+  }, []);
   return (
     <>
       <div className={styles.main}>
