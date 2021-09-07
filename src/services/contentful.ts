@@ -1,6 +1,7 @@
-import contentful from "contentful";
+import * as contentful from "contentful";
 
-export const client = contentful.createClient({
-  space: process.env.NEXT_PUBLIC_SPACE_ID,
+export const contentfulClient = contentful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENT_SPACE_ID,
+  environment: process.env.NEXT_PUBLIC_CONTENT_ENVIRONMENT_TOKEN,
   accessToken: process.env.NEXT_PUBLIC_CONTENT_DELIVERY_TOKEN,
 });
