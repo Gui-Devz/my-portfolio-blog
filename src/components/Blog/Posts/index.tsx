@@ -3,18 +3,30 @@ import { PostCard } from "../PostCard";
 
 import styles from "./posts.module.scss";
 
-export function Posts() {
+type Post = {
+  slug: string;
+  title: string;
+  author: string;
+  heroImgURL: string;
+  publishDate: string;
+  excerpt: string;
+};
+
+interface PostsProps {
+  posts: Post[];
+}
+
+export function Posts({ posts }: PostsProps) {
   return (
     <div className={styles.postsContainer}>
-      <div className={styles.card}>
-        <PostCard />
-      </div>
-      <div className={styles.card}>
-        <PostCard />
-      </div>
-      <div className={styles.card}>
-        <PostCard />
-      </div>
+      {posts &&
+        posts.map((post) => {
+          return (
+            <div key={post.slug} className={styles.card}>
+              <PostCard post={post} />
+            </div>
+          );
+        })}
     </div>
   );
 }
