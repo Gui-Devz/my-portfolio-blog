@@ -15,7 +15,7 @@ export function MyResume() {
         <div className={styles.content}>
           <div className={styles.btn}>
             <Link href="https://drive.google.com/file/d/13giT55d8fXyztXdGEJ8cUeG_z09drIFx/view">
-              <a target="_blank">
+              <a target="_blank" media="print">
                 My resume
                 <IoIosPaper />
               </a>
