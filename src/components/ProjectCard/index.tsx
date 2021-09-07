@@ -10,7 +10,7 @@ import styles from "./project-card.module.scss";
 export function ProjectCard() {
   return (
     <div className={styles.projectCard}>
-      <Image src={projectImg} alt="project print screen" />
+      <Image src={projectImg} alt="App about food" />
 
       <div className={styles.cardContent}>
         <h3>Foody</h3>
