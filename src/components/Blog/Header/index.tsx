@@ -50,13 +50,15 @@ export function Header() {
         <label htmlFor="tags">Filter by tags:</label>
         <select name="tags" id="tags">
           <option value="">-</option>
-          <option value="react">React</option>
-          <option value="node.js">Next.js</option>
-          <option value="node.js">Jest</option>
-          <option value="node.js">Node.js</option>
-          <option value="node.js">Databases</option>
-          <option value="node.js">HTML</option>
-          <option value="node.js">CSS</option>
+          <option value="reactJs">React</option>
+          <option value="nextJs">Next.js</option>
+          <option value="frontEnd">Front-end</option>
+          <option value="backEnd">Back-end</option>
+          <option value="jest">Jest</option>
+          <option value="nodeJs">Node.js</option>
+          <option value="databases">Databases</option>
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
         </select>
       </div>
       <hr className={styles.line} />
