@@ -1,29 +1,46 @@
+import Link from "next/link";
+
 import Image from "next/image";
-import heroImg from "../../../assets/hero-test.jpg";
 
 import styles from "./post-card.module.scss";
+import { useRouter } from "next/dist/client/router";
 
-export function PostCard() {
+type Post = {
+  slug: string;
+  title: string;
+  author: string;
+  heroImgURL: string;
+  publishDate: string;
+  excerpt: string;
+};
+
+interface PostCardProps {
+  post: Post;
+}
+
+export function PostCard({ post }: PostCardProps) {
+  const router = useRouter();
+
   return (
     <div className={styles.postCard}>
-      <article>
-        <time>12 de março de 2021</time>
-        <h1>Creating a Monorepo with Lerna &amp; Yarn Workspaces</h1>
-        <div className={styles.author}>
-          <p>
-            author: <address>Guilherme Zagari</address>
-          </p>
-        </div>
-        <div className={styles.heroImg}>
-          <Image src={heroImg} alt="hero-img" />
-        </div>
-        <div className={styles.excerpt}>
-          <p>
-            In this guide, you will learn how to create a Monorepo to manage
-            multiple packages with a shared build, test and release process.
-          </p>
-        </div>
-      </article>
+      <Link href={`${router.asPath}/${post.slug}`}>
+        <a>
+          <article>
+            <time>{post.publishDate}</time>
+            <h1>{post.title}</h1>
+            <div className={styles.author}>
+              <p>Written by:</p>
+              <address>{post.author}</address>
+            </div>
+            <div className={styles.heroImg}>
+              <Image src={post.heroImgURL} layout="fill" alt="Hero image" />
+            </div>
+            <div className={styles.excerpt}>
+              <h2>{post.excerpt}</h2>
+            </div>
+          </article>
+        </a>
+      </Link>
     </div>
   );
 }
