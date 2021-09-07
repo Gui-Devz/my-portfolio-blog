@@ -25,7 +25,7 @@ const Home: NextPage = () => {
     <>
       <div className={styles.main}>
         <Head>
-          <title>Portfolio - Guilherme</title>
+          <title>Portfolio - Software developer</title>
         </Head>
         <HeaderPortfolio />
         <Presentation />
