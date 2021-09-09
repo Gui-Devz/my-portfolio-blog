@@ -4,8 +4,20 @@
   padding: 0 6rem;
   margin: 0 auto;
 
+  .filter {
+    padding-top: 1rem;
+  }
+
+  .postNotFound {
+    margin-top: 4rem;
+    text-align: center;
+
+    font-size: 2em;
+    font-weight: 500;
+  }
+
   .card {
-    margin: 4rem 0;
+    margin: 2rem 0 4rem 0;
     &::after {
       content: "";
       display: block;
