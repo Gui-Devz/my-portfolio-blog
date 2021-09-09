@@ -24,7 +24,7 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <div className={styles.postCard}>
       <Link href={`${router.asPath}/${post.slug}`}>
-        <a>
+        <a target="_blank">
           <article>
             <time>{post.publishDate}</time>
             <h1>{post.title}</h1>
