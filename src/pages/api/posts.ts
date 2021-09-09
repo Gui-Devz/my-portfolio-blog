@@ -16,7 +16,7 @@ type Post = {
 
 type OptionsValue = {
   skip?: string | string[];
-  limit: number;
+  limit?: number;
   tag?: string | string[];
   title?: string | string[];
   content_type: string;
@@ -24,18 +24,20 @@ type OptionsValue = {
 
 interface GetPostsReturnValues {
   posts: Post[];
-  nextPage: number | undefined;
+  nextGroup: number | undefined;
 }
+
+const limitSearchPosts = 2;
 
 async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
   try {
     const response: ContentfulCollection<any> =
       await contentfulClient.getEntries({
-        skip: options.skip,
-        limit: options.limit,
+        skip: options.skip ? options.skip : 0,
+        limit: options.limit ? options.limit : undefined,
         content_type: options.content_type,
-        "metadata.tags.sys.id[in]": options.tag,
-        "fields.title[match]": options.title,
+        "metadata.tags.sys.id[in]": options.tag ? options.tag : undefined,
+        "fields.title[match]": options.title ? options.title : undefined,
       });
 
     const posts = response.items.map((post) => {
@@ -54,10 +56,10 @@ async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
 
     const data = {
       posts,
-      nextPage:
-        response.total > Number(options.skip) + 3
-          ? Number(options.skip) + 3
-          : undefined,
+      nextGroup:
+        response.total > Number(options.skip) + limitSearchPosts
+          ? Number(options.skip) + limitSearchPosts
+          : 0,
     };
 
     return data;
@@ -75,7 +77,7 @@ export default async function handler(
   if (filterByTag) {
     const options = {
       skip: nextGroup,
-      limit: 3,
+      limit: 100,
       tag: filterByTag,
       content_type: "posts",
     };
@@ -92,7 +94,7 @@ export default async function handler(
   } else if (filterByTitle) {
     const options = {
       skip: nextGroup,
-      limit: 3,
+      limit: 100,
       title: filterByTitle,
       content_type: "posts",
     };
@@ -109,8 +111,7 @@ export default async function handler(
 
   const options = {
     skip: nextGroup,
-    limit: 3,
-    title: filterByTitle,
+    limit: limitSearchPosts,
     content_type: "posts",
   };
   try {
