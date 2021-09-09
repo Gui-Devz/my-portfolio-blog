@@ -53,6 +53,14 @@ export function Header({
   const [selectedTag, setSelectedTag] = useState("");
   const [title, setTitle] = useState("");
 
+  function handleClickOnLogo() {
+    setTitleFilter("");
+    setTitle("");
+    setTagFilter("");
+    setSelectedTag("");
+    setPosts([]);
+  }
+
   function handleSelectedTag(event) {
     setSelectedTag(event.target.value);
   }
@@ -61,6 +69,9 @@ export function Header({
     event.preventDefault();
     if (title === "") {
       setPosts([]);
+      setTitleFilter("");
+      setTagFilter("");
+      setSelectedTag("");
       return;
     }
     const response: ResponseValue = await api.get("posts", {
@@ -73,6 +84,9 @@ export function Header({
     const posts = response.data.posts;
 
     setPosts(posts);
+    setTagFilter("");
+    setSelectedTag("");
+    setTitleFilter(title);
   }
 
   useEffect(() => {
@@ -94,6 +108,7 @@ export function Header({
   useEffect(() => {
     if (selectedTag === "") {
       setPosts([]);
+      setTagFilter("");
       return;
     }
     async function getPostsByTag() {
@@ -107,21 +122,28 @@ export function Header({
       const posts = response.data.posts;
 
       setPosts(posts);
+      setTitleFilter("");
+      setTagFilter(selectedTag);
     }
 
     getPostsByTag();
-  }, [selectedTag, setPosts, setTagFilter]);
+  }, [selectedTag, setPosts, setTitleFilter, setTagFilter]);
 
   return (
     <header>
       <div className={styles.headerContainer}>
-        <Image src={logoImg} alt="Logo image" />
+        <Image
+          src={logoImg}
+          alt="Logo image"
+          onClick={() => handleClickOnLogo()}
+        />
         <div className={styles.filtersAndLinks}>
           <div className={styles.filters}>
             <form onSubmit={(e) => handleSubmitForm(e)}>
               <div className={styles.searchInput}>
                 <input
                   type="text"
+                  value={title}
                   placeholder="Search by title"
                   onChange={(e) => setTitle(e.target.value)}
                 />
@@ -162,7 +184,9 @@ export function Header({
             handleSelectedTag(e);
           }}
         >
-          <option value="">-</option>
+          <option value="" selected={selectedTag === ""}>
+            -
+          </option>
           {tags.length > 0 &&
             tags.map((tag) => {
               return (
