@@ -27,7 +27,7 @@ interface GetPostsReturnValues {
   nextGroup: number | undefined;
 }
 
-const limitSearchPosts = 2;
+const limitSearchPosts = 1;
 
 async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
   try {
@@ -37,7 +37,7 @@ async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
         limit: options.limit ? options.limit : undefined,
         content_type: options.content_type,
         "metadata.tags.sys.id[in]": options.tag ? options.tag : undefined,
-        "fields.title[match]": options.title ? options.title : undefined,
+        "fields.title[match]": options.title ? `"${options.title}"` : undefined,
       });
 
     const posts = response.items.map((post) => {
@@ -59,7 +59,7 @@ async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
       nextGroup:
         response.total > Number(options.skip) + limitSearchPosts
           ? Number(options.skip) + limitSearchPosts
-          : 0,
+          : undefined,
     };
 
     return data;
