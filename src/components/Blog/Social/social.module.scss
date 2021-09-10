@@ -1,0 +1,8 @@
+.socialWrapper {
+  display: flex;
+  gap: 0.9rem;
+
+  & svg:hover {
+    filter: brightness(0.9);
+  }
+}
