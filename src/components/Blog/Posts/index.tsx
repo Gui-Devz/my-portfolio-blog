@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteQuery } from "react-query";
-import { api } from "../../../services/api";
+
 import { PostCard } from "../PostCard";
+import { LoadingSpinner } from "../../LoadingSpinner";
+
+import { api } from "../../../services/api";
 
 import styles from "./posts.module.scss";
 
@@ -62,6 +65,26 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
     return;
   }, [posts, data, isLoading]);
 
+  if (isError) {
+    return (
+      <div className={styles.postsContainer}>
+        <p className={styles.postNotFound}>
+          Sorry! Something went wrong with fetching the posts.
+        </p>
+      </div>
+    );
+  }
+
+  if (isLoading && newPosts.length <= 3) {
+    return (
+      <div className={styles.postsContainer}>
+        <div className={styles.loadingSpinner}>
+          <LoadingSpinner />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.postsContainer}>
       {titleFilter !== "" && (
@@ -81,7 +104,7 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
           dataLength={!isLoading ? data.pages.length : newPosts.length} //This is important field to render the next data
           next={fetchNextPage}
           hasMore={hasNextPage}
-          loader={<h4>Loading...</h4>}
+          loader={<LoadingSpinner />}
           endMessage={
             <p style={{ textAlign: "center" }}>
               <b>Yay! You have seen it all</b>
