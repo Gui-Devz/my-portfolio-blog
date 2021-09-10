@@ -10,9 +10,15 @@ export function MyProjects() {
       </h2>
       <section className={styles.projects}>
         <div className={styles.projectsWrapper}>
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          <div className={styles.card}>
+            <ProjectCard />
+          </div>
+          <div className={styles.card}>
+            <ProjectCard />
+          </div>
+          <div className={styles.card}>
+            <ProjectCard />
+          </div>
         </div>
       </section>
     </>

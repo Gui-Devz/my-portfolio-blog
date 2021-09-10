@@ -18,5 +18,15 @@
     flex-direction: column;
 
     gap: 3.5rem;
+
+    .card + .card {
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        border-top: 1px solid var(--gray-300);
+        margin-bottom: 4rem;
+      }
+    }
   }
 }
