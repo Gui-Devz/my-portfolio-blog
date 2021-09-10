@@ -1,28 +1,76 @@
 header {
   .headerContainer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     max-width: 920px;
 
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
     margin: 0 auto;
 
-    img {
-      cursor: pointer;
-      width: 3rem;
+    .links {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        img {
+          width: 3rem;
+        }
+
+        span {
+          font-size: 1.2em;
+          letter-spacing: 0.1em;
+        }
+      }
+
+      .homeLink {
+        font-size: 1.2em;
+        font-weight: bold;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
+
+      .linksSocial {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 0.5rem;
+
+        .portfolio {
+          text-decoration: underline;
+
+          &:hover {
+            filter: brightness(0.9);
+          }
+        }
+      }
     }
 
-    .filtersAndLinks {
+    .searchBar {
       display: flex;
       align-items: center;
       gap: 2rem;
 
+      padding: 1.5rem 0 1rem 0;
+
+      width: 70%;
+      form {
+        width: 100%;
+      }
+
       form .searchInput {
         position: relative;
+        width: 100%;
 
         input {
-          width: 25rem;
+          width: 100%;
           height: 2rem;
 
           padding: 1rem;
@@ -50,34 +98,37 @@ header {
       }
     }
 
-    .socialWrapper {
+    .selectTag {
       display: flex;
-      gap: 0.9rem;
+      align-items: center;
+      gap: 1rem;
+      max-width: 600px;
 
-      & svg:hover {
-        filter: brightness(0.9);
+      margin: 0 auto;
+
+      font-weight: 600;
+
+      select {
+        border: none;
+        border-radius: 0.2rem;
       }
-    }
-  }
-
-  .selectTags {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    font-weight: 600;
-
-    select {
-      border: none;
-      border-radius: 0.2rem;
     }
   }
 
   .line {
     margin-top: 2rem;
     border: 0.1px solid var(--gray-300);
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .headerContainer {
+    .searchBar {
+      min-width: 100%;
+    }
+
+    .homeLink {
+      display: none;
+    }
   }
 }
