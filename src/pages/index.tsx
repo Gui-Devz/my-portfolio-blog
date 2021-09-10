@@ -14,13 +14,6 @@ import { ScrollUp } from "../components/ScrollUp";
 import styles from "./home.module.scss";
 
 const Home: NextPage = () => {
-  const [lastKnownScrollPosition, setLastKnownScrollPosition] = useState(0);
-
-  useEffect(() => {
-    document.addEventListener("scroll", function (e) {
-      setLastKnownScrollPosition(window.scrollY);
-    });
-  }, []);
   return (
     <>
       <div className={styles.main}>
@@ -34,7 +27,7 @@ const Home: NextPage = () => {
         <MyResume />
         <ContactMe />
         <Footer />
-        {lastKnownScrollPosition >= 200 && <ScrollUp />}
+        <ScrollUp />
       </div>
     </>
   );
