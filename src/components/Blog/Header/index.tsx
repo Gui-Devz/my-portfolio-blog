@@ -1,22 +1,25 @@
-import {
+import React, {
   Dispatch,
   FormEvent,
   SetStateAction,
   useEffect,
   useState,
 } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 import { contentfulClient } from "../../../services/contentful";
 
-import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
-import { FiTwitter, FiSearch } from "react-icons/fi";
+import Image from "next/image";
+import Link from "next/link";
+
+import { FiSearch } from "react-icons/fi";
 
 import logoImg from "../../../assets/logo.svg";
 
 import styles from "./header.module.scss";
 import { api } from "../../../services/api";
+
+import { Social } from "../Social";
 
 type Post = {
   slug: string;
@@ -49,6 +52,7 @@ export function Header({
   setTitleFilter,
   setTagFilter,
 }: HeaderProps) {
+  const router = useRouter();
   const [tags, setTags] = useState<TagsValue[]>([]);
   const [selectedTag, setSelectedTag] = useState("");
   const [title, setTitle] = useState("");
@@ -132,70 +136,71 @@ export function Header({
   return (
     <header>
       <div className={styles.headerContainer}>
-        <Image
-          src={logoImg}
-          alt="Logo image"
-          onClick={() => handleClickOnLogo()}
-        />
-        <div className={styles.filtersAndLinks}>
-          <div className={styles.filters}>
-            <form onSubmit={(e) => handleSubmitForm(e)}>
-              <div className={styles.searchInput}>
-                <input
-                  type="text"
-                  value={title}
-                  placeholder="Search by title"
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-                <button type="submit" className={styles.searchIcon}>
-                  <FiSearch />
-                </button>
-              </div>
-            </form>
+        <div className={styles.links}>
+          <div className={styles.logo}>
+            <Link href="/blog">
+              <a onClick={() => handleClickOnLogo()}>
+                <Image src={logoImg} alt="Logo image" />
+                <span>
+                  <b>.Blog</b>
+                </span>
+              </a>
+            </Link>
           </div>
-          <Link href="/">
-            <a target="_blank">My portfolio</a>
-          </Link>
+          {router.asPath == "/blog" && (
+            <div className={styles.homeLink}>
+              <Link href="/blog">
+                <a onClick={() => handleClickOnLogo()}>Home</a>
+              </Link>
+            </div>
+          )}
+          <div className={styles.linksSocial}>
+            <div className={styles.portfolio}>
+              <Link href="/">
+                <a target="_blank">Check out my portfolio</a>
+              </Link>
+            </div>
+            <div>
+              <Social />
+            </div>
+          </div>
         </div>
-        <div className={styles.socialWrapper}>
-          <Link href="https://www.linkedin.com/in/guilherme-batalha-2b913448/">
-            <a target="_blank">
-              <AiFillLinkedin fontSize="2em" />
-            </a>
-          </Link>
-          <Link href="https://www.github.com/Gui-Devz">
-            <a target="_blank">
-              <AiOutlineGithub fontSize="2em" />
-            </a>
-          </Link>
-          <Link href="https://twitter.com/Batalha97">
-            <a target="_blank">
-              <FiTwitter fontSize="2em" />
-            </a>
-          </Link>
+        <div className={styles.searchBar}>
+          <form onSubmit={(e) => handleSubmitForm(e)}>
+            <div className={styles.searchInput}>
+              <input
+                type="text"
+                value={title}
+                placeholder="Search by title"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <button type="submit" className={styles.searchIcon}>
+                <FiSearch />
+              </button>
+            </div>
+          </form>
         </div>
-      </div>
-      <div className={styles.selectTags}>
-        <label htmlFor="tags">Filter by tags:</label>
-        <select
-          name="tags"
-          id="tags"
-          onChange={(e) => {
-            handleSelectedTag(e);
-          }}
-        >
-          <option value="" selected={selectedTag === ""}>
-            -
-          </option>
-          {tags.length > 0 &&
-            tags.map((tag) => {
-              return (
-                <option key={tag.id} value={tag.id}>
-                  {tag.name}
-                </option>
-              );
-            })}
-        </select>
+        <div className={styles.selectTag}>
+          <label htmlFor="tags">Filter by tags:</label>
+          <select
+            name="tags"
+            id="tags"
+            value={selectedTag}
+            onChange={(e) => {
+              handleSelectedTag(e);
+            }}
+          >
+            <option value="">-</option>
+            {tags.length > 0 &&
+              tags.map((tag) => {
+                return (
+                  <option key={tag.id} value={tag.id}>
+                    {tag.name}
+                  </option>
+                );
+              })}
+          </select>
+        </div>
       </div>
       <hr className={styles.line} />
     </header>
