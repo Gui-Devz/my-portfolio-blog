@@ -94,32 +94,52 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
       )}
       {tagFilter !== "" && (
         <p className={styles.filter}>
-          {" "}
           <i>&#34;Filtered by: {tagFilter}&#34;</i>
         </p>
       )}
 
       {posts.length === 0 && tagFilter === "" && titleFilter === "" ? (
-        <InfiniteScroll
-          dataLength={!isLoading ? data.pages.length : newPosts.length} //This is important field to render the next data
-          next={fetchNextPage}
-          hasMore={hasNextPage}
-          loader={<LoadingSpinner />}
-          endMessage={
+        <>
+          <InfiniteScroll
+            dataLength={!isLoading ? data.pages.length : newPosts.length} //This is important field to render the next data
+            next={fetchNextPage}
+            hasMore={hasNextPage && newPosts.length <= 3}
+            loader={<LoadingSpinner />}
+            /* endMessage={
             <p style={{ textAlign: "center" }}>
               <b>Yay! You have seen it all</b>
             </p>
-          }
-        >
-          {newPosts &&
-            newPosts.map((post) => {
-              return (
-                <div key={post.slug} className={styles.card}>
-                  <PostCard post={post} />
-                </div>
-              );
-            })}
-        </InfiniteScroll>
+          } */
+          >
+            {newPosts &&
+              newPosts.map((post) => {
+                return (
+                  <div key={post.slug} className={styles.card}>
+                    <PostCard post={post} />
+                  </div>
+                );
+              })}
+          </InfiniteScroll>
+          {hasNextPage && newPosts.length > 3 ? (
+            <button className={styles.loadMore} onClick={() => fetchNextPage()}>
+              Load more
+            </button>
+          ) : (
+            ""
+          )}
+          {!isLoading && newPosts.length > 3 ? (
+            <button className={styles.loadMore} disabled>
+              Loading
+            </button>
+          ) : (
+            ""
+          )}
+          {!hasNextPage && (
+            <p style={{ textAlign: "center" }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          )}
+        </>
       ) : posts.length === 0 && (tagFilter !== "" || titleFilter !== "") ? (
         <p className={styles.postNotFound}>
           Sorry! We couldn&#39;t find any post with the filter selected.
