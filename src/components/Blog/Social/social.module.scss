@@ -2,6 +2,10 @@
   display: flex;
   gap: 0.9rem;
 
+  a {
+    height: 28px;
+  }
+
   & svg:hover {
     filter: brightness(0.9);
   }
