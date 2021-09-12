@@ -42,9 +42,9 @@ type TagsValue = {
 };
 
 interface HeaderProps {
-  setPosts: Dispatch<SetStateAction<Post[]>>;
-  setTitleFilter: Dispatch<SetStateAction<string>>;
-  setTagFilter: Dispatch<SetStateAction<string>>;
+  setPosts?: Dispatch<SetStateAction<Post[]>>;
+  setTitleFilter?: Dispatch<SetStateAction<string>>;
+  setTagFilter?: Dispatch<SetStateAction<string>>;
 }
 
 export function Header({
