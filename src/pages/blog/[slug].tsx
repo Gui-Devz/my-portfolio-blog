@@ -13,7 +13,6 @@ import { Footer } from "../../components/Footer";
 
 import { formattingDate } from "../../lib/utils";
 
-import styles from "./post.module.scss";
 import { Share } from "../../components/Blog/Share";
 import React from "react";
 import { ScrollUp } from "../../components/ScrollUp";
