@@ -8,27 +8,29 @@ import { Social } from "../../Social";
 export function HeaderPost() {
   return (
     <header className={styles.headerContainer}>
-      <div className={styles.links}>
-        <div className={styles.logo}>
-          <Link href="/blog">
-            <a>
-              <Image src={logoImg} alt="Logo image" />
-              <span>
-                <b>.Blog</b>
-              </span>
-            </a>
-          </Link>
+      <div className={styles.headerContent}>
+        <div className={styles.links}>
+          <div className={styles.logo}>
+            <Link href="/blog">
+              <a>
+                <Image src={logoImg} alt="Logo image" />
+                <span>
+                  <b>.Blog</b>
+                </span>
+              </a>
+            </Link>
+          </div>
+          <div className={styles.home}>
+            <Link href="/blog">
+              <a>Home</a>
+            </Link>
+          </div>
         </div>
-        <div className={styles.home}>
-          <Link href="/blog">
-            <a>Home</a>
-          </Link>
-        </div>
-      </div>
-      <div className={styles.socialLinks}>
-        <p>Follow me:</p>
-        <div className={styles.social}>
-          <Social />
+        <div className={styles.socialLinks}>
+          <p>Follow me:</p>
+          <div className={styles.social}>
+            <Social />
+          </div>
         </div>
       </div>
     </header>
