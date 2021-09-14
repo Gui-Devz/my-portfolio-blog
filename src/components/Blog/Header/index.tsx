@@ -134,7 +134,7 @@ export function Header({
   }, [selectedTag, setPosts, setTitleFilter, setTagFilter]);
 
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.links}>
           <div className={styles.logo}>
@@ -202,7 +202,6 @@ export function Header({
           </select>
         </div>
       </div>
-      <hr className={styles.line} />
     </header>
   );
 }
