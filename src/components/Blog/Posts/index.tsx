@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteQuery } from "react-query";
 
+import { RiFilePaperFill } from "react-icons/ri";
+
 import { PostCard } from "../PostCard";
 import { LoadingSpinner } from "../../LoadingSpinner";
 
@@ -105,11 +107,6 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
             next={fetchNextPage}
             hasMore={hasNextPage && newPosts.length <= 3}
             loader={<LoadingSpinner />}
-            /* endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          } */
           >
             {newPosts &&
               newPosts.map((post) => {
@@ -147,9 +144,15 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
       ) : (
         newPosts.map((post) => {
           return (
-            <div key={post.slug} className={styles.card}>
-              <PostCard post={post} />
-            </div>
+            <>
+              <p className={styles.postFound}>
+                <RiFilePaperFill size="1.5em" /> <span>{newPosts.length}</span>{" "}
+                posts found
+              </p>
+              <div key={post.slug} className={styles.card}>
+                <PostCard post={post} />
+              </div>
+            </>
           );
         })
       )}

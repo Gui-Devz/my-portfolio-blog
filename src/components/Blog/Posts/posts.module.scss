@@ -8,6 +8,14 @@
     padding-top: 1rem;
   }
 
+  .postFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    gap: 0.5rem;
+  }
+
   .postNotFound {
     margin-top: 4rem;
     text-align: center;
