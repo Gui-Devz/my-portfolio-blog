@@ -89,6 +89,7 @@ export function ContactMe() {
           <div>
             <label htmlFor="name">Name*:</label>
             <input
+              id="name"
               name="name"
               type="text"
               value={name}
@@ -100,6 +101,7 @@ export function ContactMe() {
           <div>
             <label htmlFor="email">Email*:</label>
             <input
+              id="email"
               name="email"
               type="text"
               value={email}
@@ -111,6 +113,7 @@ export function ContactMe() {
           <div className={styles.textArea}>
             <label htmlFor="message">Message*:</label>
             <textarea
+              id="message"
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
