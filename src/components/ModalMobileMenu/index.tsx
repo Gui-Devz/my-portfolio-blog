@@ -18,7 +18,7 @@ export function ModalMobileMenu({ toggleModal }: ModalDataProps) {
     <div className={styles.menuContainer}>
       <div className={styles.linksWrapper}>
         <nav className={styles.links}>
-          <Link href="/">
+          <Link href="/blog">
             <a onClick={() => toggleModal()}>Blog</a>
           </Link>
           <Link href="#projects">
