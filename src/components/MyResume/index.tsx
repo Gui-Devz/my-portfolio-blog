@@ -10,23 +10,23 @@ export function MyResume() {
         Resume
       </h2>
       <section className={styles.resume}>
-        <p className={styles.resumeIntro}>Take a look at my resume:</p>
+        <h3 className={styles.resumeIntro}>Take a look at my resume:</h3>
 
         <div className={styles.content}>
           <div className={styles.btn}>
             <Link href="https://drive.google.com/file/d/13giT55d8fXyztXdGEJ8cUeG_z09drIFx/view">
-              <a target="_blank" media="print">
+              <a target="_blank">
                 My resume
                 <IoIosPaper />
               </a>
             </Link>
           </div>
-          <span>
+          <div className={styles.warning}>
             <p>
               **Please don&apos;t worry you won&apos;t be downloading anything.
             </p>
             <p>The file is hosted in google drive.</p>
-          </span>
+          </div>
         </div>
       </section>
     </>
