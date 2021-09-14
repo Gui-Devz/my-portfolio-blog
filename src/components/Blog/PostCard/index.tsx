@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import styles from "./post-card.module.scss";
 import { useRouter } from "next/dist/client/router";
+import { useEffect, useState } from "react";
 
 type Post = {
   slug: string;
@@ -21,12 +22,20 @@ interface PostCardProps {
 export function PostCard({ post }: PostCardProps) {
   const router = useRouter();
 
+  const [year, setYear] = useState(0);
+
+  useEffect(() => {
+    const date = new Date();
+
+    setYear(date.getFullYear());
+  }, []);
+
   return (
     <div className={styles.postCard}>
       <Link href={`${router.asPath}/${post.slug}`}>
         <a target="_blank">
           <article>
-            <time>{post.publishDate}</time>
+            <time dateTime={`${year}`}>{post.publishDate}</time>
             <h1>{post.title}</h1>
             <div className={styles.author}>
               <p>Written by:</p>
