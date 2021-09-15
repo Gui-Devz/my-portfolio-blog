@@ -1,41 +1,81 @@
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 import { BsCodeSlash } from "react-icons/bs";
 import { BsWifi } from "react-icons/bs";
 
-import projectImg from "../../assets/foodfy.png";
-
 import styles from "./project-card.module.scss";
 
-export function ProjectCard() {
+type Project = {
+  title: string;
+  content: string;
+  codeLink: string;
+  liveDemoLink: string;
+  imageURL: string;
+  imageDescription: string;
+};
+
+interface ProjectCardProps {
+  project: Project;
+}
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className={styles.projectCard}>
-      <Image src={projectImg} alt="App about food" />
+      <div className={styles.image}>
+        <Image
+          src={`${project.imageURL}?w=700&h=500`}
+          alt={project.imageDescription}
+          layout="fill"
+        />
+      </div>
 
       <div className={styles.cardContent}>
-        <h3>Foody</h3>
-        <p>
-          Web app where you can post and search recipes. Have a complete CRUD
-          system where it&apos;s possible to manage users accounts, user&apos;s
-          recipes and chefs.
-        </p>
+        <h3>{project.title}</h3>
+        <p>{project.content}</p>
         <div className={styles.buttonWrapper}>
-          <div>
-            <button>
-              See code
-              <span>
-                <BsCodeSlash />
-              </span>
-            </button>
-          </div>
-          <div>
-            <button>
-              Live demo
-              <span>
-                <BsWifi />
-              </span>
-            </button>
-          </div>
+          {project.codeLink.length > 1 ? (
+            <div className={styles.button}>
+              <Link href="#">
+                <a className="code" target="_blank">
+                  See code
+                  <span>
+                    <BsCodeSlash />
+                  </span>
+                </a>
+              </Link>
+            </div>
+          ) : (
+            <div className={styles.buttonDisabled}>
+              <p>
+                See code
+                <span>
+                  <BsCodeSlash />
+                </span>
+              </p>
+            </div>
+          )}
+          {project.liveDemoLink.length > 1 ? (
+            <div className={styles.button}>
+              <Link href="#">
+                <a className="live" target="_blank">
+                  Live demo
+                  <span>
+                    <BsWifi />
+                  </span>
+                </a>
+              </Link>
+            </div>
+          ) : (
+            <div className={styles.buttonDisabled}>
+              <p>
+                Live demo
+                <span>
+                  <BsWifi />
+                </span>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
