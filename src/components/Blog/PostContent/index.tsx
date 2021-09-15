@@ -42,7 +42,7 @@ export function PostContent({ content }: PostContentProps) {
                   <a target="_blank">
                     <div className={styles.imageContent}>
                       <Image
-                        src={`https:${node.data.target.fields.file.url}?fit=pad&w=660&h=500&fl=progressive`}
+                        src={`https:${node.data.target.fields.file.url}?w=660&h=500&fl=progressive`}
                         layout="fill"
                         alt={node.data.target.fields.description}
                       />
@@ -58,7 +58,7 @@ export function PostContent({ content }: PostContentProps) {
                   <a target="_blank">
                     <div className={styles.imageContent}>
                       <Image
-                        src={`https:${node.data.target.fields.file.url}?fit=pad&w=660&h=500`}
+                        src={`https:${node.data.target.fields.file.url}?w=660&h=500&fl=progressive`}
                         layout="fill"
                         alt={node.data.target.fields.description}
                       />

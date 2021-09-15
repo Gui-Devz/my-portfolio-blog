@@ -36,7 +36,11 @@ export function PostDebrief({
         <h1>{title}</h1>
       </div>
       <div className={styles.image}>
-        <Image src={heroImg} layout="fill" alt="banner image" />
+        <Image
+          src={`${heroImg}?w=1500&h=500&fl=progressive`}
+          layout="fill"
+          alt="banner image"
+        />
       </div>
       <div className={styles.infoPost}>
         <p className={styles.updateDate}>
