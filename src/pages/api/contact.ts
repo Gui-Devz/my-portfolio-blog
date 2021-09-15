@@ -8,8 +8,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   if (!pattern.test(req.body.email)) {
-    console.log("here");
-
     return res.status(203).json({});
   }
   const mailData = {
@@ -25,7 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     </div>`,
   };
 
-  /* transporter.sendMail(mailData, function (err, info) {
+  transporter.sendMail(mailData, function (err, info) {
     if (err) {
       console.log(err);
 
@@ -33,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     } else {
       console.log(info);
     }
-  }); */
+  });
 
   res.status(200).json({});
 }
