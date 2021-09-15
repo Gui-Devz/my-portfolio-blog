@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteQuery } from "react-query";
 
@@ -64,7 +64,7 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
 
       setNewPosts(posts.flat());
     }
-    return;
+    return () => setNewPosts([]);
   }, [posts, data, isLoading]);
 
   if (isError) {
@@ -144,15 +144,15 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
       ) : (
         newPosts.map((post) => {
           return (
-            <>
+            <React.Fragment key={post.slug}>
               <p className={styles.postFound}>
                 <RiFilePaperFill size="1.5em" /> <span>{newPosts.length}</span>{" "}
                 posts found
               </p>
-              <div key={post.slug} className={styles.card}>
+              <div className={styles.card}>
                 <PostCard post={post} />
               </div>
-            </>
+            </React.Fragment>
           );
         })
       )}

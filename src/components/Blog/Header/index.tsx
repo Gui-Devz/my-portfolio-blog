@@ -105,6 +105,8 @@ export function Header({
       });
 
       setTags(allTags);
+
+      return () => setTags([]);
     }
     getAllTags();
   }, []);
@@ -131,6 +133,8 @@ export function Header({
     }
 
     getPostsByTag();
+
+    return () => setPosts([]);
   }, [selectedTag, setPosts, setTitleFilter, setTagFilter]);
 
   return (

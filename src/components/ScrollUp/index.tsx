@@ -9,12 +9,18 @@ export function ScrollUp() {
   function scrollToTop() {
     // Do something with the scroll position
     window.scrollTo(0, 0);
+    return;
+  }
+
+  function settingTheScrollPosition() {
+    setLastKnownScrollPosition(window.scrollY);
   }
 
   useEffect(() => {
-    document.addEventListener("scroll", () => {
-      setLastKnownScrollPosition(window.scrollY);
-    });
+    document.addEventListener("scroll", settingTheScrollPosition, false);
+
+    return () =>
+      document.removeEventListener("scroll", settingTheScrollPosition, false);
   }, []);
   return (
     <>
