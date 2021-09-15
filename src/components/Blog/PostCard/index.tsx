@@ -33,7 +33,7 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <div className={styles.postCard}>
       <Link href={`${router.asPath}/${post.slug}`}>
-        <a target="_blank">
+        <a>
           <article>
             <time dateTime={`${year}`}>{post.publishDate}</time>
             <h1>{post.title}</h1>
@@ -42,7 +42,11 @@ export function PostCard({ post }: PostCardProps) {
               <address>{post.author}</address>
             </div>
             <div className={styles.heroImg}>
-              <Image src={post.heroImgURL} layout="fill" alt="Hero image" />
+              <Image
+                src={`${post.heroImgURL}?w=900&h=500&fm=jpg&fl=progressive`}
+                alt="Hero image"
+                layout="fill"
+              />
             </div>
             <div className={styles.excerpt}>
               <h2>{post.excerpt}</h2>
