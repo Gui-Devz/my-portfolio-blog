@@ -161,7 +161,9 @@ export function Header({
           <div className={styles.linksSocial}>
             <div className={styles.portfolio}>
               <Link href="/">
-                <a target="_blank">Check out my portfolio</a>
+                <a target="_blank" rel="noopener">
+                  Check out my portfolio
+                </a>
               </Link>
             </div>
             <div>

@@ -71,7 +71,7 @@ export function PostContent({ content }: PostContentProps) {
             return (
               <>
                 <Link href={`https:${node.data.target.fields.file.url}`}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noopener">
                     <div className={styles.imageContent}>
                       <Image
                         src={`https:${node.data.target.fields.file.url}?fit=pad&w=660&h=500`}
@@ -90,7 +90,9 @@ export function PostContent({ content }: PostContentProps) {
       [INLINES.HYPERLINK]: function Links(node) {
         return (
           <Link href={node.data.uri}>
-            <a target="_blank">{node.content[0].value}</a>
+            <a target="_blank" rel="noopener">
+              {node.content[0].value}
+            </a>
           </Link>
         );
       },
