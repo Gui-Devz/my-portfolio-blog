@@ -20,7 +20,7 @@
 }
 
 .navHeader {
-  background: var(--yellow-500);
+  background: var(--gray-400);
   position: fixed;
   top: 0;
 
@@ -51,6 +51,10 @@
     .socialWrapper {
       display: flex;
       gap: 0.9rem;
+
+      a:hover {
+        filter: brightness(0.9);
+      }
     }
   }
 
