@@ -9,13 +9,19 @@
 
   margin: 0 auto;
 
-  img {
-    object-fit: cover;
-    max-width: 300px;
+  .image {
+    position: relative;
+    width: 450px;
+    height: 500px;
+    img {
+      object-fit: cover;
 
-    height: 300px;
+      max-width: 300px;
 
-    border-radius: 0.2rem;
+      height: 0px;
+
+      border-radius: 0.2rem;
+    }
   }
   .cardContent {
     width: 200px;
@@ -26,7 +32,7 @@
     }
 
     p {
-      font-size: 1em;
+      font-size: 1.1em;
       line-height: 1.5em;
       text-align: justify;
     }
@@ -35,31 +41,55 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
 
-      margin-top: 1rem;
+      margin-top: 1.5rem;
 
-      div {
+      .button {
+        display: inline-flex;
+        align-items: center;
         background: var(--cyan-500);
         border-radius: 0.2rem;
-
-        button {
-          display: inline-flex;
-          align-items: center;
-          background: none;
-          border: none;
-
+        a {
           width: fit-content;
-
           padding: 0.5rem;
 
+          font-size: 1rem;
           color: white;
           span {
             padding-left: 0.5rem;
-            font-size: 0.8em;
 
             height: 12px;
             width: fit-content;
+
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .buttonDisabled {
+        filter: brightness(0.6);
+        cursor: not-allowed;
+
+        display: inline-flex;
+        align-items: center;
+        background: var(--cyan-500);
+        border-radius: 0.2rem;
+
+        width: fit-content;
+        padding: 0.5rem;
+
+        font-size: 1rem;
+        color: white;
+        p {
+          font-size: 1rem;
+          span {
+            padding-left: 0.5rem;
+
+            height: 12px;
+            width: fit-content;
+
+            font-size: 0.8rem;
           }
         }
       }
