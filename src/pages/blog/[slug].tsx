@@ -51,7 +51,7 @@ export default function Post({ post }: PostProps) {
   );
 }
 
-export async function getStaticPaths({ params }) {
+export async function getStaticPaths() {
   return {
     paths: [],
     fallback: "blocking",
@@ -85,5 +85,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post: post,
     },
+    revalidate: 60 * 60 * 10, //10 hours
   };
 };
