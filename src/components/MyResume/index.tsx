@@ -3,7 +3,11 @@ import { IoIosPaper } from "react-icons/io";
 
 import styles from "./myresume.module.scss";
 
-export function MyResume() {
+interface MyResumeProps {
+  resumeLink: string;
+}
+
+export function MyResume({ resumeLink }: MyResumeProps) {
   return (
     <>
       <h2 id="resume" className={styles.H2}>
@@ -14,7 +18,7 @@ export function MyResume() {
 
         <div className={styles.content}>
           <div className={styles.btn}>
-            <Link href="https://drive.google.com/file/d/13giT55d8fXyztXdGEJ8cUeG_z09drIFx/view">
+            <Link href={resumeLink}>
               <a target="_blank">
                 My resume
                 <IoIosPaper />
