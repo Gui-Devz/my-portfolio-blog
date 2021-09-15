@@ -4,6 +4,7 @@ import { contentfulClient } from "../../services/contentful";
 import { formattingDate } from "../../lib/utils";
 
 import { ContentfulCollection } from "contentful";
+import protectAPI from "../../middlewares/protectAPI";
 
 type Post = {
   slug: string;
@@ -69,10 +70,7 @@ async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
   }
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { nextGroup, filterByTag, filterByTitle } = req.query;
 
   if (filterByTag) {
@@ -125,3 +123,5 @@ export default async function handler(
     });
   }
 }
+
+export default protectAPI(handler);
