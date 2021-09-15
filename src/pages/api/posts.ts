@@ -36,6 +36,7 @@ async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
         skip: options.skip ? options.skip : 0,
         limit: options.limit ? options.limit : undefined,
         content_type: options.content_type,
+        order: "-sys.createdAt",
         "metadata.tags.sys.id[in]": options.tag ? options.tag : undefined,
         "fields.title[match]": options.title ? `"${options.title}"` : undefined,
       });
