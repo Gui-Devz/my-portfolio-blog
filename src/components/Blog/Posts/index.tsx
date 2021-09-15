@@ -49,6 +49,7 @@ export function Posts({ posts, titleFilter, tagFilter }: PostsProps) {
   const { data, error, fetchNextPage, hasNextPage, isError, isLoading } =
     useInfiniteQuery("posts", getAllPosts, {
       getNextPageParam: (lastPage) => lastPage?.nextGroup,
+      staleTime: 1000 * 60 * 60 * 10, //10 hours
     });
 
   useEffect(() => {
