@@ -7,7 +7,7 @@ import { ContentfulCollection } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
 import { HeaderPost } from "../../../components/Blog/Header/HeaderPost";
-import { PostDebrief } from "../../../components/Blog/PostDebrief";
+import { BriefPost } from "../../../components/Blog/BriefPost";
 import { PostContent } from "../../../components/Blog/PostContent";
 import { Footer } from "../../../components/Footer";
 import { Share } from "../../../components/Blog/Share";
@@ -34,7 +34,7 @@ export default function PostPreview({ post }: PostProps) {
         <title>Blog preview - {post.title}</title>
       </Head>
       <HeaderPost />
-      <PostDebrief
+      <BriefPost
         tags={post.tags}
         title={post.title}
         heroImg={post.heroImgURL}
