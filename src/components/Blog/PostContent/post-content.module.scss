@@ -16,6 +16,49 @@
 
   line-height: 2rem;
 
+  .codeContainer {
+    .languageCode {
+      background: var(--gray-900);
+      margin-bottom: 0;
+      padding-left: 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+
+      border-radius: 0.2rem 0.2rem 0 0;
+    }
+
+    .codeContent {
+      position: relative;
+
+      button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+
+        background: var(--gray-850);
+        border: none;
+        border-radius: 0.2rem;
+
+        color: #fff;
+      }
+
+      pre {
+        height: 700px;
+
+        border-radius: 0 0 0.2rem 0.2rem;
+        code {
+          background: #282c34;
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
   .imageContent {
     position: relative;
     display: flex;
@@ -59,12 +102,14 @@
   .codeBlock {
     padding: 2rem;
     background: var(--gray-900);
-  }
-  code {
-    background: var(--gray-900);
-    word-wrap: break-word;
 
-    box-sizing: content-box;
+    border-radius: 0.2rem;
+    code {
+      background: var(--gray-900);
+      word-wrap: break-word;
+
+      box-sizing: content-box;
+    }
   }
 
   ul {

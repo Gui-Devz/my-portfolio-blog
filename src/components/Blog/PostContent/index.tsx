@@ -1,8 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+
 import { BLOCKS, INLINES, Document } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import styles from "./post-content.module.scss";
 
@@ -22,6 +27,32 @@ export function PostContent({ content }: PostContentProps) {
         }
         return <p>{children}</p>;
       },
+      [BLOCKS.EMBEDDED_ENTRY]: function codes(node) {
+        return (
+          <div className={styles.codeContainer}>
+            <p className={styles.languageCode}>
+              {node.data.target.fields.language}
+            </p>
+            <div className={styles.codeContent}>
+              <button
+                onClick={() =>
+                  navigator.clipboard.writeText(node.data.target.fields.code)
+                }
+              >
+                <HiOutlineClipboardCopy />
+                <span>Copy</span>
+              </button>
+              <SyntaxHighlighter
+                language={node.data.target.fields.language}
+                style={atomOneDarkReasonable}
+                showLineNumbers
+              >
+                {node.data.target.fields.code}
+              </SyntaxHighlighter>
+            </div>
+          </div>
+        );
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const assetType = node.data.target.fields.file.contentType;
 
@@ -39,7 +70,7 @@ export function PostContent({ content }: PostContentProps) {
             return (
               <>
                 <Link href={`https:${node.data.target.fields.file.url}`}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noopener">
                     <div className={styles.imageContent}>
                       <Image
                         src={`https:${node.data.target.fields.file.url}?w=660&h=500&fl=progressive`}
@@ -55,7 +86,7 @@ export function PostContent({ content }: PostContentProps) {
             return (
               <>
                 <Link href={`https:${node.data.target.fields.file.url}`}>
-                  <a target="_blank">
+                  <a target="_blank" rel="noopener">
                     <div className={styles.imageContent}>
                       <Image
                         src={`https:${node.data.target.fields.file.url}?w=660&h=500&fl=progressive`}
@@ -98,6 +129,7 @@ export function PostContent({ content }: PostContentProps) {
       },
     },
   };
+
   return (
     <div className={styles.container}>
       <section className={styles.post}>
