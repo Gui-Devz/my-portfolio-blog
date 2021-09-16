@@ -15,7 +15,7 @@ interface PostDebriefProps {
   author: string;
 }
 
-export function PostDebrief({
+export function BriefPost({
   tags,
   title,
   heroImg,
