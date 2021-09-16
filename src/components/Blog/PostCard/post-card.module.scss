@@ -8,6 +8,13 @@
       .excerpt p {
         filter: brightness(0.9);
       }
+
+      .heroImg {
+        transition: scale 1.2s;
+        img {
+          transform: scale(1.1);
+        }
+      }
     }
     time {
       font-size: 0.8em;
