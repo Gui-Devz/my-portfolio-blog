@@ -6,17 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "coverage": "jest --coverage",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.3.5",
+    "@next/bundle-analyzer": "^11.1.2",
+    "@react-icons/all-files": "^4.1.0",
     "axios": "^0.21.1",
     "contentful": "^8.5.3",
     "next": "11.1.0",
     "nodemailer": "^6.6.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.2.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-modal": "^3.14.3",
     "react-query": "^3.23.1",
@@ -26,13 +30,20 @@
     "sass": "^1.38.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
     "@types/nodemailer": "^6.4.4",
     "@types/react": "17.0.19",
     "@types/react-modal": "^3.12.1",
     "@types/react-query": "^1.2.9",
     "@types/react-syntax-highlighter": "^13.5.2",
+    "babel-jest": "^27.2.0",
+    "cross-env": "^7.0.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.0",
+    "react-test-renderer": "^17.0.2",
     "typescript": "4.4.2"
   }
 }
