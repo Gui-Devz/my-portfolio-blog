@@ -1,19 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";
+import typescript from "react-syntax-highlighter/dist/cjs/languages/hljs/typescript";
+import sql from "react-syntax-highlighter/dist/cjs/languages/hljs/sql";
+import css from "react-syntax-highlighter/dist/cjs/languages/hljs/css";
+import scss from "react-syntax-highlighter/dist/cjs/languages/hljs/scss";
+import json from "react-syntax-highlighter/dist/cjs/languages/hljs/json";
+import atomOneDarkReasonable from "react-syntax-highlighter/dist/cjs/styles/hljs/atom-one-dark-reasonable";
 
 import { BLOCKS, INLINES, Document } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-import { HiOutlineClipboardCopy } from "react-icons/hi";
+import { FaRegClipboard } from "@react-icons/all-files/fa/FaRegClipboard";
 
 import styles from "./post-content.module.scss";
 
 interface PostContentProps {
   content: Document;
 }
+
+SyntaxHighlighter.registerLanguage("javascript", js);
+SyntaxHighlighter.registerLanguage("typescript", typescript);
+SyntaxHighlighter.registerLanguage("sql", sql);
+SyntaxHighlighter.registerLanguage("css", css);
+SyntaxHighlighter.registerLanguage("scss", scss);
+SyntaxHighlighter.registerLanguage("json", json);
 
 export function PostContent({ content }: PostContentProps) {
   const options = {
@@ -39,7 +52,7 @@ export function PostContent({ content }: PostContentProps) {
                   navigator.clipboard.writeText(node.data.target.fields.code)
                 }
               >
-                <HiOutlineClipboardCopy />
+                <FaRegClipboard />
                 <span>Copy</span>
               </button>
               <SyntaxHighlighter
