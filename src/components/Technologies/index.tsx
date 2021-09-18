@@ -1,5 +1,9 @@
-import { SiJavascript, SiPostgresql, SiJest } from "react-icons/si";
-import { FaReact, FaNode, FaCss3 } from "react-icons/fa";
+import { FaReact } from "@react-icons/all-files/fa/FaReact";
+import { FaNode } from "@react-icons/all-files/fa/FaNode";
+import { FaCss3 } from "@react-icons/all-files/fa/FaCss3";
+import { SiJavascript } from "@react-icons/all-files/si/SiJavascript";
+import { SiPostgresql } from "@react-icons/all-files/si/SiPostgresql";
+import { SiJest } from "@react-icons/all-files/si/SiJest";
 
 import styles from "./technologies.module.scss";
 

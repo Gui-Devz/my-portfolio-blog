@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { Document } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-import { BiStopwatch } from "react-icons/bi";
+import { BiStopwatch } from "@react-icons/all-files/bi/BiStopwatch";
 
 import styles from "./post-debrief.module.scss";
 import { useEffect, useState } from "react";

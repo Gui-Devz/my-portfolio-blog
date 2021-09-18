@@ -12,7 +12,7 @@ import { contentfulClient } from "../../../services/contentful";
 import Image from "next/image";
 import Link from "next/link";
 
-import { FiSearch } from "react-icons/fi";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 import logoImg from "../../../assets/logo.svg";
 
@@ -181,7 +181,7 @@ export function Header({
                 onChange={(e) => setTitle(e.target.value)}
               />
               <button type="submit" className={styles.searchIcon}>
-                <FiSearch />
+                <FaSearch />
               </button>
             </div>
           </form>

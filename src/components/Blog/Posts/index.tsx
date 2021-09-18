@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteQuery } from "react-query";
 
-import { RiFilePaperFill } from "react-icons/ri";
+import { RiFilePaperFill } from "@react-icons/all-files/ri/RiFilePaperFill";
 
 import { PostCard } from "../PostCard";
 import { LoadingSpinner } from "../../LoadingSpinner";

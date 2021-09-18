@@ -7,10 +7,11 @@ import {
   TelegramShareButton,
 } from "react-share";
 
-import { AiFillLinkedin } from "react-icons/ai";
-import { FaFacebookF, FaTelegram } from "react-icons/fa";
-import { FiTwitter } from "react-icons/fi";
-import { RiWhatsappFill } from "react-icons/ri";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaWhatsapp } from "@react-icons/all-files/fa/FaWhatsapp";
+import { FaTelegram } from "@react-icons/all-files/fa/FaTelegram";
 
 import styles from "./share.module.scss";
 
@@ -24,7 +25,7 @@ export function Share() {
       <div>
         <span>
           <LinkedinShareButton url={path}>
-            <AiFillLinkedin size="2em" />
+            <FaLinkedin size="2em" />
           </LinkedinShareButton>
         </span>
         <span>
@@ -34,12 +35,12 @@ export function Share() {
         </span>
         <span>
           <TwitterShareButton url={path}>
-            <FiTwitter size="2em" />
+            <FaTwitter size="2em" />
           </TwitterShareButton>
         </span>
         <span>
           <WhatsappShareButton url={path}>
-            <RiWhatsappFill size="2em" />
+            <FaWhatsapp size="2em" />
           </WhatsappShareButton>
         </span>
         <span>

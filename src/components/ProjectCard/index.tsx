@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { BsCodeSlash } from "react-icons/bs";
-import { BsWifi } from "react-icons/bs";
+import { BsCodeSlash } from "@react-icons/all-files/bs/BsCodeSlash";
+import { BsWifi } from "@react-icons/all-files/bs/BsWifi";
 
 import styles from "./project-card.module.scss";
 

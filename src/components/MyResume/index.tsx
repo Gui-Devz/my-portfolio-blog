@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IoIosPaper } from "react-icons/io";
+import { IoIosPaper } from "@react-icons/all-files/io/IoIosPaper";
 
 import styles from "./myresume.module.scss";
 

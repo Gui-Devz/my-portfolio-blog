@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BiUpArrow } from "react-icons/bi";
+import { BiUpArrow } from "@react-icons/all-files/bi/BiUpArrow";
 
 import styles from "./scrollup.module.scss";
 

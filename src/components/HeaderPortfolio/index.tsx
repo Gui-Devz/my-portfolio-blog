@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Modal from "react-modal";
 
-import { GoThreeBars } from "react-icons/go";
-import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
-import { FiTwitter } from "react-icons/fi";
+import { GoThreeBars } from "@react-icons/all-files/go/GoThreeBars";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 
 import { ModalMobileMenu } from "../ModalMobileMenu";
 
@@ -54,22 +55,22 @@ export function HeaderPortfolio() {
           <div className={styles.socialWrapper}>
             <Link href="https://www.linkedin.com/in/guilherme-batalha-2b913448/">
               <a target="_blank">
-                <AiFillLinkedin fontSize="2em" />
+                <FaLinkedin fontSize="2em" />
               </a>
             </Link>
             <Link href="https://www.github.com/Gui-Devz">
               <a target="_blank">
-                <AiOutlineGithub fontSize="2em" />
+                <FaGithub fontSize="2em" />
               </a>
             </Link>
             <Link href="https://twitter.com/Batalha97">
               <a target="_blank">
-                <FiTwitter fontSize="2em" />
+                <FaTwitter fontSize="2em" />
               </a>
             </Link>
           </div>
           <button onClick={() => toggleModal()} className={styles.mobileMenu}>
-            <GoThreeBars color="white" size="2em" />
+            <GoThreeBars fontSize="2em" />
           </button>
         </div>
       </header>

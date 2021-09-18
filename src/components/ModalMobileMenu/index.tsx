@@ -1,13 +1,11 @@
 import Link from "next/link";
 
-import {
-  AiFillLinkedin,
-  AiOutlineCloseCircle,
-  AiOutlineGithub,
-} from "react-icons/ai";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { AiOutlineCloseCircle } from "@react-icons/all-files/ai/AiOutlineCloseCircle";
 
 import styles from "./mobile-menu.module.scss";
-import { FiTwitter } from "react-icons/fi";
 
 type ModalDataProps = {
   toggleModal: () => void;
@@ -34,17 +32,17 @@ export function ModalMobileMenu({ toggleModal }: ModalDataProps) {
         <div className={styles.socialWrapper}>
           <Link href="https://www.linkedin.com/in/guilherme-batalha-2b913448/">
             <a target="_blank">
-              <AiFillLinkedin fontSize="3em" />
+              <FaLinkedin fontSize="3em" />
             </a>
           </Link>
           <Link href="https://www.github.com/Gui-Devz">
             <a target="_blank">
-              <AiOutlineGithub fontSize="3em" />
+              <FaGithub fontSize="3em" />
             </a>
           </Link>
           <Link href="https://twitter.com/Batalha97">
             <a target="_blank">
-              <FiTwitter fontSize="3em" />
+              <FaTwitter fontSize="3em" />
             </a>
           </Link>
         </div>
