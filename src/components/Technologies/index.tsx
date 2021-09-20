@@ -9,9 +9,9 @@ import styles from "./technologies.module.scss";
 
 export function Technologies() {
   return (
-    <>
+    <section>
       <h2 className={styles.H2}>Technologies I&apos;m used to</h2>
-      <section className={styles.technologies}>
+      <div className={styles.technologies}>
         <div className={styles.techTools}>
           <div>
             <SiJavascript color="#D3C20C" fontSize="4em" />
@@ -38,7 +38,7 @@ export function Technologies() {
             <span>CSS3/SASS</span>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

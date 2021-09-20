@@ -17,11 +17,11 @@ interface MyProjectsProps {
 
 export function MyProjects({ projects }: MyProjectsProps) {
   return (
-    <>
+    <section>
       <h2 id="projects" className={styles.H2}>
         My projects
       </h2>
-      <section className={styles.projects}>
+      <div className={styles.projects}>
         <div className={styles.projectsWrapper}>
           {projects &&
             projects.map((project) => {
@@ -32,7 +32,7 @@ export function MyProjects({ projects }: MyProjectsProps) {
               );
             })}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

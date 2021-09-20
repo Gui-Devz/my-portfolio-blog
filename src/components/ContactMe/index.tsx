@@ -79,11 +79,11 @@ export function ContactMe() {
   }
 
   return (
-    <>
+    <section>
       <h2 id="contactme" className={styles.H2}>
         Let&apos;s work together
       </h2>
-      <section className={styles.contactMe}>
+      <div className={styles.contactMe}>
         <ToastContainer />
         <form onSubmit={handleSubmitForm}>
           <div>
@@ -131,7 +131,7 @@ export function ContactMe() {
             </span>
           </button>
         </form>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
