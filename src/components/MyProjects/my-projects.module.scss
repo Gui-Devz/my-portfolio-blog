@@ -23,9 +23,9 @@
       &::before {
         content: "";
         display: block;
-        width: 100%;
+        width: 80%;
         border-top: 1px solid var(--gray-300);
-        margin-bottom: 4rem;
+        margin: 0 auto 4rem;
       }
     }
   }
