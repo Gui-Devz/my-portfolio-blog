@@ -35,13 +35,22 @@
 
 ## 💻 Project
 
-<p align="center"> Ignews is an App for you to keep track about what's happening in the frontend development world. </p>
+<br/>
+
+<p align="left"> This application is all about sharing.
+The main idea was to create an environment where I could share my projects, ideas, and knowledge with everyone who belongs to the tech industry. 
+</p>
+
+<br/>
 
 [//]: # "Add your gifs/images here:"
 
 <div align="center">
 
 <img width="1604" alt="" src="https://user-images.githubusercontent.com/62578862/134086802-0e9d830f-f399-4bca-b97e-ffd843895ce3.png">
+<br/>
+<br/>
+<p>Blog</p>
 <br/>
 <img width="1604" alt="" src="https://user-images.githubusercontent.com/62578862/134086561-f0a64f82-04a3-487b-91fd-5dd33ffb6624.JPG">
 
@@ -64,7 +73,7 @@
 
 ## :information_source: How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js][nodejs] installed on your computer.
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js][nodejs] and [Yarn][yarn] installed on your computer.
 
 ### Install Front-end
 
@@ -119,3 +128,4 @@ Made with ♥ by Guilherme Zagari :wave: [Get in touch!](https://www.linkedin.co
 [axios]: https://github.com/axios/axios
 [sass]: https://sass-lang.com/
 [styled-components]: https://github.com/styled-components/styled-components
+[yarn]: https://yarnpkg.com/
