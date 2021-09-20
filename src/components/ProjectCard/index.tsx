@@ -24,7 +24,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <div className={styles.projectCard}>
       <div className={styles.image}>
         <Image
-          src={`${project.imageURL}?w=700&h=500`}
+          src={`${project.imageURL}?w=800`}
           alt={project.imageDescription}
           layout="fill"
         />
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className={styles.buttonWrapper}>
           {project.codeLink.length > 1 ? (
             <div className={styles.button}>
-              <Link href="#">
+              <Link href={project.codeLink}>
                 <a className="code" target="_blank">
                   See code
                   <span>
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
           {project.liveDemoLink.length > 1 ? (
             <div className={styles.button}>
-              <Link href="#">
+              <Link href={project.liveDemoLink}>
                 <a className="live" target="_blank">
                   Live demo
                   <span>
