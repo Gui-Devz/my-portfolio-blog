@@ -43,7 +43,7 @@ export function PostCard({ post }: PostCardProps) {
             </div>
             <div className={styles.heroImg}>
               <Image
-                src={`${post.heroImgURL}?w=900&h=500&fm=jpg&fl=progressive`}
+                src={`${post.heroImgURL}?w=800&h=800`}
                 alt="Hero image"
                 layout="fill"
               />
