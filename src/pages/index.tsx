@@ -16,9 +16,8 @@ import { ScrollUp } from "../components/ScrollUp";
 import styles from "./home.module.scss";
 
 type EntryResume = {
-  fields: {
-    resumeLink: string;
-  };
+  language: string;
+  link: string;
 };
 
 type Project = {
@@ -33,7 +32,7 @@ type Project = {
 interface HomeProps {
   data: {
     projects: Project[];
-    myResume: string;
+    myResumes: EntryResume[];
   };
 }
 
@@ -48,7 +47,7 @@ export default function Home({ data }: HomeProps) {
         <Presentation />
         <Technologies />
         <MyProjects projects={data.projects} />
-        <MyResume resumeLink={data.myResume} />
+        <MyResume resumes={data.myResumes} />
         <ContactMe />
         <Footer />
         <ScrollUp />
@@ -61,11 +60,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const responseProjects: ContentfulCollection<any> =
     await contentfulClient.getEntries({
       content_type: "projects",
+      order: "sys.createdAt",
     });
 
-  const responseMyResume: EntryResume = await contentfulClient.getEntry(
-    "3V8NYbQNQFeeJDB0cqFNlA"
-  );
+  const responseMyResumes: ContentfulCollection<any> =
+    await contentfulClient.getEntries({
+      content_type: "resume",
+    });
 
   const projects = responseProjects.items.map((project) => {
     return {
@@ -80,11 +81,16 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   });
 
-  const myResume = responseMyResume.fields.resumeLink;
+  const myResumes = responseMyResumes.items.map((resume) => {
+    return {
+      language: resume.fields.language,
+      link: resume.fields.resumeLink,
+    };
+  });
 
   return {
     props: {
-      data: { projects, myResume },
+      data: { projects, myResumes },
     },
     revalidate: 60 * 60 * 24, //24 hours
   };
