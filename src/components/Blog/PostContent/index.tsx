@@ -111,6 +111,22 @@ export function PostContent({ content }: PostContentProps) {
                 </Link>
               </>
             );
+          case "image/jpeg":
+            return (
+              <>
+                <Link href={`https:${node.data.target.fields.file.url}`}>
+                  <a target="_blank" rel="noopener">
+                    <div className={styles.imageContent}>
+                      <Image
+                        src={`https:${node.data.target.fields.file.url}?w=660&h=500&fl=progressive`}
+                        layout="fill"
+                        alt={node.data.target.fields.description}
+                      />
+                    </div>
+                  </a>
+                </Link>
+              </>
+            );
           case "image/gif":
             return (
               <>
