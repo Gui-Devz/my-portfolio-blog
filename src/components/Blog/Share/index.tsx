@@ -14,10 +14,18 @@ import { FaWhatsapp } from "@react-icons/all-files/fa/FaWhatsapp";
 import { FaTelegram } from "@react-icons/all-files/fa/FaTelegram";
 
 import styles from "./share.module.scss";
+import { useEffect, useState } from "react";
 
 export function Share() {
-  const router = useRouter();
-  const path = router.asPath;
+  /* const router = useRouter();
+  const path = router.asPath; */
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    setPath(window.location.href);
+  }, []);
+
+  console.log(path);
 
   return (
     <div className={styles.container}>
