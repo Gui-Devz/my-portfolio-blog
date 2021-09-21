@@ -1,18 +1,20 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import transporter from "../../services/nodemailer";
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(process.env.NEXT_PUBLIC_CONTENT_SENDGRID_TOKEN);
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
   const pattern =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   if (!pattern.test(req.body.email)) {
     return res.status(203).json({});
   }
-  const mailData = {
-    from: process.env.NEXT_PUBLIC_USER,
+
+  const msg = {
     to: process.env.NEXT_PUBLIC_EMAIL,
+    from: process.env.NEXT_PUBLIC_USER,
     subject: `Portfolio message from ${req.body.name}`,
     text: req.body.message,
     html: `
@@ -23,15 +25,18 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     </div>`,
   };
 
-  await transporter.sendMail(mailData, function (err, info) {
-    if (err) {
-      console.log(err);
+  (async () => {
+    try {
+      await sgMail.send(msg);
+    } catch (error) {
+      console.error(error);
 
-      return res.status(535);
-    } else {
-      console.log(info);
+      if (error.response) {
+        console.error(error.response.body);
+      }
+      return res.status(535).json({});
     }
-  });
+  })();
 
   res.status(200).json({});
 }
