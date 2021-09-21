@@ -66,7 +66,7 @@ The main idea was to create an environment where I could share my projects, idea
 - 🔵 [Contentful][contentful] — Contentful is a Headless Content Management System, a tool for editing online content.
 - 💹 [React Query][react-query] — "Instead of writing reducers, caching logic, timers, retry logic, complex async/await scripting (I could keep going...), you literally write a tiny fraction of the code you normally would. You will be surprised at how little code you're writing or how much code you're deleting when you use React Query."
 - 💹 [React Syntax Highlighter][react-syntax-highlighter] — With this amazing react component it's possible to properly style the code blocks retrieved from Contentful(or any other source).
-- 💹 [Nodemailer][nodemailer] — A library that makes possible to send emails from the app.
+- 💹 [Sendgrid][sendgrid] — An email API service (it handles the email sending in the portfolio page).
 - 💹 [Axios][axios] — Promise based HTTP client for the browser and node.js
 - 💹 [SASS][sass] — Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
   components and styles.
@@ -120,6 +120,7 @@ Made with ♥ by Guilherme Zagari :wave: [Get in touch!](https://www.linkedin.co
 [react-syntax-highlighter]: https://github.com/react-syntax-highlighter/react-syntax-highlighter
 [stripe]: https://stripe.com/en-br
 [nodemailer]: https://nodemailer.com/about/
+[sendgrid]: https://sendgrid.com/
 [postgresql]: https://www.postgresql.org/
 [express]: https://expressjs.com/
 [json-server]: https://github.com/typicode/json-server
