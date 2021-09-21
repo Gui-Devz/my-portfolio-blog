@@ -4,7 +4,6 @@ import { contentfulClient } from "../../services/contentful";
 import { formattingDate } from "../../lib/utils";
 
 import { ContentfulCollection } from "contentful";
-import protectAPI from "../../middlewares/protectAPI";
 
 type Post = {
   slug: string;
