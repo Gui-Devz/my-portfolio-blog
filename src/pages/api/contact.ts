@@ -2,9 +2,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(process.env.NEXT_PUBLIC_CONTENT_SENDGRID_TOKEN);
+sgMail.setApiKey(process.env.SENDGRID_TOKEN);
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log(process.env.SENDGRID_TOKEN);
+
   const pattern =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
