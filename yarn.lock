@@ -693,6 +693,29 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.6.tgz#023d72a5c4531b4ce204528971700a78a85a0c50"
   integrity sha512-Myxw//kzromB9yWgS8qYGuGVf91oBUUJpNvy5eM50sqvmKLbKjwLxohJnkWGTeeI9v9IBMtPLxz5Gc60FIfvCA==
 
+"@sendgrid/client@^7.4.6":
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-7.4.6.tgz#c7b5a6fc0c12e48fcc77faf183f0a99f5cc8ec52"
+  integrity sha512-g3vjDyN1hDTKwPe9THGNuf4HKkx+cC3dSOM7SM88Pg6Q9SRI+GDGzsdnGRfFFpsdHBVVrHCSk0n2f4YZVCv4zA==
+  dependencies:
+    "@sendgrid/helpers" "^7.4.6"
+    axios "^0.21.1"
+
+"@sendgrid/helpers@^7.4.6":
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-7.4.6.tgz#0fed40aeb9738a0d698ec2ce311c73f7460cfd72"
+  integrity sha512-Vvt4d60fkU/DPSwMyxXtlnbw4/B+5Y9eeYnygTxhmw8TNzUhdPphr7SaRSperWJ8P1VeQZzobvQNyMj5E7A3UA==
+  dependencies:
+    deepmerge "^4.2.2"
+
+"@sendgrid/mail@^7.4.6":
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.4.6.tgz#497e59ac415bf19561293c1fe92c5ef86eee7fae"
+  integrity sha512-1HTW5Iu1oKw5r8cltAPfVFbaJjjIrWmYR8WP0I8br01ImUhy1/42vGCVl6QWkPP6pcAfsWNIrjSPx20ZcVNvVQ==
+  dependencies:
+    "@sendgrid/client" "^7.4.6"
+    "@sendgrid/helpers" "^7.4.6"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
@@ -4081,11 +4104,6 @@ node-releases@^1.1.71, node-releases@^1.1.75:
   version "1.1.75"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.75.tgz#6dd8c876b9897a1b8e5a02de26afa79bb54ebbfe"
   integrity sha512-Qe5OUajvqrqDSy6wrWFmMwfJ0jVgwiw4T3KqmbTcZ62qW0gQkheXYhcFM1+lOVcGUoRxcEcfyvFMAnDgaF1VWw==
-
-nodemailer@^6.6.3:
-  version "6.6.3"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.6.3.tgz#31fb53dd4d8ae16fc088a65cb9ffa8d928a69b48"
-  integrity sha512-faZFufgTMrphYoDjvyVpbpJcYzwyFnbAMmQtj1lVBYAUSm3SOy2fIdd9+Mr4UxPosBa0JRw9bJoIwQn+nswiew==
 
 normalize-package-data@^2.3.2:
   version "2.5.0"
