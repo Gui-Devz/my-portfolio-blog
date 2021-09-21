@@ -37,4 +37,4 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({});
 }
 
-export default protectAPI(handler);
+export default handler;

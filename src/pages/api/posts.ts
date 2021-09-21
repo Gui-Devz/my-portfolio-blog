@@ -124,4 +124,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-export default protectAPI(handler);
+export default handler;
