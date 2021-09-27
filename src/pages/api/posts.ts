@@ -27,7 +27,7 @@ interface GetPostsReturnValues {
   nextGroup: number | undefined;
 }
 
-const limitSearchPosts = 1;
+const limitSearchPosts = 3;
 
 async function getPosts(options: OptionsValue): Promise<GetPostsReturnValues> {
   try {
