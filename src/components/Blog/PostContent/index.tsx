@@ -58,7 +58,6 @@ export function PostContent({ content }: PostContentProps) {
               <SyntaxHighlighter
                 language={node.data.target.fields.language}
                 style={atomOneDarkReasonable}
-                showLineNumbers
               >
                 {node.data.target.fields.code}
               </SyntaxHighlighter>
