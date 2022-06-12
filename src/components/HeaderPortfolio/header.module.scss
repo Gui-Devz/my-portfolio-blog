@@ -37,6 +37,10 @@
     max-width: 920px;
     margin: 0 auto;
 
+    span {
+      max-width: 55% !important;
+    }
+
     nav {
       display: flex;
       gap: 1rem;
@@ -44,7 +48,7 @@
       font-weight: 700;
 
       a:hover {
-        filter: brightness(0.9);
+        color: #d3c20c;
       }
     }
 
@@ -62,10 +66,6 @@
     display: none;
     background: none;
     border: none;
-  }
-
-  img {
-    width: 3rem;
   }
 }
 

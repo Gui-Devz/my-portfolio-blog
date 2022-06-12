@@ -70,3 +70,24 @@
     max-height: 0;
   }
 }
+@media screen and (min-width: 2560px) {
+  .presentation {
+    .presentationHeader {
+      .presentationContainer {
+        max-width: 900px;
+      }
+    }
+  }
+  .heroImg {
+    span {
+      max-width: 80% !important;
+    }
+  }
+}
+@media screen and (min-width: 2880px) {
+  .heroImg {
+    span {
+      max-width: 100% !important;
+    }
+  }
+}

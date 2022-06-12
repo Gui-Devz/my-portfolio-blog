@@ -92,3 +92,12 @@
     }
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .projectCard {
+    max-width: 100%;
+    .cardContent {
+      width: 330px;
+    }
+  }
+}

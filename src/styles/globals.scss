@@ -35,6 +35,16 @@ html {
     font-size: 87.5%;
   }
 }
+@media (min-width: 2560px) {
+  html {
+    font-size: 120%;
+  }
+}
+@media (min-width: 2880px) {
+  html {
+    font-size: 140%;
+  }
+}
 
 body {
   background: var(--gray-850);
