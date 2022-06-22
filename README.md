@@ -58,7 +58,7 @@ The main idea was to create an environment where I could share my projects, idea
 
 <hr />
 
-## :rocket: Technologies
+### :rocket: Technologies
 
 [//]: # "Add the features of your project here:"
 
