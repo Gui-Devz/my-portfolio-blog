@@ -24,7 +24,7 @@ const Presentation: NextPage = () => {
       </div>
       <div className={styles.presentationContent}>
         <p>
-          Hey there! my name is Guilherme, I&apos;m a Jr. dev, I&apos;m always
+          Hey there! my name is Guilherme, I&apos;m a fullstack dev, I&apos;m always
           trying to create and learn something new through coding.
         </p>
       </div>
